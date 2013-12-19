@@ -6,7 +6,7 @@ You can choose to reset the password for all users or just the users in one or m
 
 See INSTALL.txt for installation instructions.
 
-## Possible features ##
+## Possible new features ##
 
 * Reset based on account age
 * Reset based on attributes

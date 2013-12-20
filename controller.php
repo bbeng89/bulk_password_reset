@@ -10,7 +10,7 @@ defined('C5_EXECUTE') or die(_("Access Denied"));
 class BulkPasswordResetPackage extends Package {
 	protected $pkgHandle = 'bulk_password_reset';
 	protected $appVersionRequired = '5.6.0';
-	protected $pkgVersion = '0.9.1';
+	protected $pkgVersion = '0.9.2';
 
 	public function getPackageDescription(){
 		return t('Allows you to update user passwords in bulk.');

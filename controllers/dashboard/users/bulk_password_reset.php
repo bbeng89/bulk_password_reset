@@ -59,8 +59,7 @@ class DashboardUsersBulkPasswordResetController extends Controller{
 				$db->Execute($query, $data);
 				$count = $db->Affected_Rows();
 
-				$msg = t('User passwords have been successfully reset. ');
-				$msg = $msg . $count . (($count == 1) ? t(" user was affected.") : t(" users were affected."));
+				$msg = t2('User passwords have been successfully reset. %d user was affected.', 'User passwords have been successfully reset. %d users were affected', $count, $count);
 				$this->set('message',  $msg);
 				$this->view();
 			}

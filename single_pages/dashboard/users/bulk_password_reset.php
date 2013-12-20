@@ -22,6 +22,7 @@ echo $dbh->getDashboardPaneHeaderWrapper(t('Bulk Password Reset'), t('Reset the 
 			<li><?php echo t('Selecting multiple groups will reset passwords for users in <strong>ANY</strong> of those groups.');?></li>
 			<li><?php echo t("The super admin's password will never be reset."); ?></li>
 		</ul>
+		<p><strong>Note:</strong> Please use caution when resetting and distributing your users' passwords.</p>
 		<hr/>
 		<div class="control-group">
 			<label class="control-label" for="delay"><?php echo t("New Password"); ?></label>

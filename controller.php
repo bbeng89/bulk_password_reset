@@ -13,7 +13,7 @@ class BulkPasswordResetPackage extends Package {
 	protected $pkgVersion = '0.9.0';
 
 	public function getPackageDescription(){
-		return t('Utility for performing bulk password resets');
+		return t('Allows you to update user passwords in bulk.');
 	}
 
 	public function getPackageName(){

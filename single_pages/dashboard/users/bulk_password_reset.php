@@ -19,6 +19,7 @@ echo $dbh->getDashboardPaneHeaderWrapper(t('Bulk Password Reset'), t('Reset the 
 		<p><?php echo t("This form will reset user passwords for all users in the selected groups."); ?></p>
 		<ul>
 			<li><?php echo t('Select "All Groups" to reset the password for all users in your site.'); ?></li>
+			<li><?php echo t('Selecting multiple groups will reset passwords for users in <strong>ANY</strong> of those groups.');?></li>
 			<li><?php echo t("The super admin's password will never be reset."); ?></li>
 		</ul>
 		<hr/>

@@ -52,15 +52,10 @@ class DashboardUsersBulkPasswordResetController extends Controller{
 				$query = "UPDATE Users u LEFT JOIN UserGroups ug ON u.uID = ug.uID SET u.uPassword = ? WHERE u.uID != 1";
 
 				if(count($groups > 0) && !in_array('A', $groups)){
-					$query .= " AND";
-
-					foreach($groups as $gid){
-						$query .= " ug.gID = ? OR";
-						$data[] = $gid;
-					}
-
-					$query = rtrim($query, "OR");
+					$groupStr = implode(', ', $groups);
+					$query .= " AND ug.gID IN (" . $groupStr . ")";
 				}
+
 				$db->Execute($query, $data);
 				$count = $db->Affected_Rows();
 
@@ -83,7 +78,9 @@ class DashboardUsersBulkPasswordResetController extends Controller{
 	private function getGroups(){
 		Loader::model('search/group');
 		$gs = new GroupSearch();
+		//ignore the Guest group
 		$gs->filter('gID', 1, '!=');
+		//ignore the Registered Users group
 		$gs->filter('gID', 2, '!=');
 		$groupArr = $gs->get(9999, 0);
 		$groups = array("A" => t("All Groups"));
